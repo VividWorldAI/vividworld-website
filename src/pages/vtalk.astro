@@ -1,0 +1,72 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="VTalk - VividWorld" description="Access professional digital humans at prices starting from just $0.1 per minute." />
+  </head>
+  <body class="min-h-screen flex flex-col bg-neutral-950">
+    <Header />
+    <main class="flex-grow pt-16">
+      <section class="relative section bg-neutral-950">
+        <div class="absolute inset-0 grid-bg opacity-10"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl max-h-2xl bg-blue-500/5 rounded-full blur-3xl"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl mx-auto text-center mb-12">
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 backdrop-blur-sm mb-6">
+              <span class="text-sm text-blue-300">Digital Humans</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 glow-text">VTalk</h1>
+            <p class="text-xl text-neutral-400 leading-relaxed">
+              Access professional digital humans at prices starting from just $0.1 per minute.
+            </p>
+          </div>
+
+          <div class="max-w-2xl mx-auto">
+            <div class="card-glass">
+              <h2 class="text-2xl font-bold text-white mb-4">Professional Digital Humans</h2>
+              <p class="text-neutral-400 mb-6">
+                VTalk provides you with access to professional digital humans at remarkably affordable prices.
+                Whether you need a virtual presenter for your business, customer service representatives,
+                or hosts for your content, our digital humans deliver professional results at a fraction of the cost.
+              </p>
+              <ul class="space-y-3 text-neutral-400 mb-6">
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-blue-400 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  Starting at just $0.1 per minute
+                </li>
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-blue-400 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  Multiple digital human options to choose from
+                </li>
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-blue-400 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  Easy API integration for developers
+                </li>
+              </ul>
+              <a href="/" class="btn-glow inline-flex">
+                Get Started
+                <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

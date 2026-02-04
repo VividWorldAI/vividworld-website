@@ -2,49 +2,79 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import ProductCard from '../components/ProductCard.astro';
+import ContactForm from '../components/ContactForm.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="min-h-screen flex flex-col bg-neutral-950">
+    <Header />
+    <main class="flex-grow">
+      <Hero />
+
+      <section class="relative section bg-neutral-950">
+        <div class="absolute inset-0 grid-bg opacity-20"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl max-h-2xl bg-primary/5 rounded-full blur-3xl"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="section-title animate-fade-in">Our Products</h2>
+            <p class="section-subtitle mx-auto animate-fade-in" style="animation-delay: 0.1s;">
+              Innovative AI solutions designed for everyone.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div class="animate-slide-in-left" style="animation-delay: 0.2s;">
+              <ProductCard
+                title="Seem"
+                description="Upload your photos and audio to create a personalized AI Soulmate for real-time video calls."
+                href="/seem"
+                learnMore="Learn More →"
+              />
+            </div>
+            <div class="animate-slide-in-right" style="animation-delay: 0.3s;">
+              <ProductCard
+                title="VTalk"
+                description="Access professional digital humans at prices starting from just $0.1 per minute."
+                href="/vtalk"
+                learnMore="Learn More →"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="relative section bg-neutral-950 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-neutral-950 via-primary/3 to-neutral-950"></div>
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl mx-auto text-center animate-fade-in">
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6">
+              <span class="text-sm text-blue-300">Our Mission</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 glow-text">Connecting everyone to a more vivid world.</h2>
+            <p class="text-xl text-neutral-400 leading-relaxed">
+              We believe in making AI technology accessible, personal, and meaningful for everyone.
+              Through Seem and VTalk, we're building the future of human-AI interaction.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="relative">
+        <div class="absolute inset-0 grid-bg opacity-20"></div>
+        <ContactForm />
+      </div>
+    </main>
+    <Footer />
+  </body>
 </html>
